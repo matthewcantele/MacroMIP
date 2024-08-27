@@ -143,7 +143,7 @@ sectors_nace_62 = ['A01', 'A02', 'A03', 'B', 'C10-C12', 'C13-C15', 'C16', 'C17',
 sectors_nace_1 = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S']
 key_sectors = ['A01', 'H50', 'H51', 'H52', 'H53', 'K64', 'K65']
 
-time_steps = [f"Q{i}" for i in range(0,13)]
+time_steps = [f"Quarter {i}" for i in range(0,13)]
 
 experiments = [f"E{i}" for i in range(0,18)]
 
@@ -156,15 +156,15 @@ sectors_nace_62_colors =  cm.tab20(np.linspace(0, 1, len(sectors_nace_62)))
 #%% load data
 print('loading data')
 # `data` is a dictionary with variable names as keys and loaded matrices as values
-base = loadmat('Baseline.mat')
-shock_eq = loadmat('Earthquake_Q1.mat')
-shock_f = loadmat('Flood_Q1.mat')
-shock_eq_f = loadmat('Earthquake_Q1_Flood_Q5.mat')
-shock_f_eq = loadmat('Flood_Q1_Earthquake_Q5.mat')
+base = loadmat('data/Baseline.mat')
+shock_eq = loadmat('data/Earthquake_Q1.mat')
+shock_f = loadmat('data/Flood_Q1.mat')
+shock_eq_f = loadmat('data/Earthquake_Q1_Flood_Q5.mat')
+shock_f_eq = loadmat('data/Flood_Q1_Earthquake_Q5.mat')
 
 
 scenarios = [shock_f, shock_eq, shock_f_eq, shock_eq_f]
-scenarios_names = ["flood", "earthquake", "compound flood earthquake", "compound earthquake flood"]
+scenarios_names = ["flood", "earthquake", "consecutive flood earthquake", "cosecutive earthquake flood"]
 scenarios_colors = ["deepskyblue", "indianred","deepskyblue", "indianred"]
 scenarios_linest = ["-","-","--","--"]
 
@@ -173,7 +173,7 @@ print('loading map')
 
 sns.set(style="whitegrid", palette="pastel", color_codes=True)
 sns.mpl.rc("figure", figsize=(10,6))
-world = gpd.read_file("ne_110m_admin_0_countries/ne_110m_admin_0_countries.shp")
+world = gpd.read_file("data/ne_110m_admin_0_countries/ne_110m_admin_0_countries.shp")
 europe = world#world[world['CONTINENT']=='Europe']
 europe.insert(len(europe.columns), 'INSET_FIG_X', europe['LABEL_X'])
 europe.insert(len(europe.columns), 'INSET_FIG_Y', europe['LABEL_Y'])
@@ -279,7 +279,7 @@ for s in range(len(scenarios)):
         scenarios_dif_rel[s][thingsWeCareAbout[j]] = (scenarios[s][thingsWeCareAbout[j]]-base[thingsWeCareAbout[j]])/base[thingsWeCareAbout[j]]
 
 
-#%% grid plots
+#%% time series plots
 print('plotting time series')
 figdir = 'figures/timeseries'
 
@@ -291,8 +291,8 @@ for plotType in plotTypes:
     # Creating a figure and a grid of subplots
     nrows=6
     ncols=5
-    subfig_size = [5, 6]
-    if os.path.isfile(figdir+'/timeseries_' + thing + '_as_' + plotType + '.png'):
+    subfig_size = [2.5, 2]
+    if False & os.path.isfile(figdir+'/timeseries_' + thing + '_as_' + plotType + '.png'):
         print('skipping grid plots ' + plotType + ' file exists.')
     else:
         print('plotting grid plots ' + plotType)
@@ -325,11 +325,11 @@ for plotType in plotTypes:
                             color=scenarios_colors[s],linestyle=scenarios_linest[s])
                     ax.set_ylim(min_val,max_val)
             ax.set_title(f'{code}')
-            ax.set_xlabel('Time Step')
+            ax.set_xlabel('Quarter')
             ax.set_ylabel(thing)
             col+=1
         handles, labels = ax.get_legend_handles_labels()
-        fig.legend(handles, labels, loc='lower right')
+        fig.legend(handles, labels, loc='lower right',prop={'size': 18})
         # Hide unused subplots
         for index in range(num_countries, nrows*ncols):  # Adjust the range if the grid size is changed
             if(col==ncols):
