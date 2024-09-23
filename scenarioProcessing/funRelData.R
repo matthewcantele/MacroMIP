@@ -8,20 +8,20 @@
 # 
 # Parameters
 # 	data  				The shock impacts specifying the capital destroyed
-# 	stocksNUTS3   The sectoral stocks of capital at NUTS3 level
-#   stocksCNT     The sectoral stocks of capital at country level
+# 	stocks        The sectoral stocks of capital at NUTS3 level, NUTS2 level, or at country 
+# 	              level depending on aggregation level
+# 	aggregationLevel one of 'CNT','NUTS2','NUTS3'
+# 	sectorColPattern the matching string for the sector names
 # 
 # Returns
 # 	shock data relative to the stocks
 # 
 # Benjamin Blanz 2024
 #
-relData <- function(data,stocksNUTS3=NULL,stocksCNT=NULL){
-	sectorColPattern <- 'ALL|TOTAL|^[A-Z]$|AGR|MIN|MFG|EGW|CNS|TRD|OTP|WTP|CMN|OFI|OBS|REA|PUB|OSG|agr|coa.oil.gas|pro|ely.elc|ser|air.wtp.tran'
+relData <- function(data,stocks,aggregationLevel,sectorColPattern){
 	# Ensure the Total clumn is called TOTAL, not ALL as in some scenarios
 	names(data)[names(data)=='ALL'] <- 'TOTAL'
-	names(stocksNUTS3)[names(stocksNUTS3)=='ALL'] <- 'TOTAL'
-	names(stocksCNT)[names(stocksCNT)=='ALL'] <- 'TOTAL'
+	names(stocks)[names(stocks)=='ALL'] <- 'TOTAL'
 	# Identify the columns with data (not the columns with country or idx). 
 	sectorCols <- grep(sectorColPattern,names(data),perl = T)
 	# prepare an empty data set for the relative data, keeping the index columns
@@ -29,17 +29,16 @@ relData <- function(data,stocksNUTS3=NULL,stocksCNT=NULL){
 	data.rel[,sectorCols] <- NA
 	for(i in 1:nrow(data)){
 		# identify the correct row in the stocks 
-		if('fid4' %in% names(data)){
-			stocks <- stocksNUTS3
+		if(aggregationLevel=='NUTS3'){
 			rowInStocks <- which(stocks$fid4 == data$fid4[i])
+		} else if(aggregationLevel=='NUTS2'){
+			rowInStocks <- which(stocks$NUTS2 == data$NUTS2[i])
 		} else if (nchar(data$CNTR_CODE[i])==2){
-			stocks <- stocksCNT
 			rowInStocks <- which(stocks$CNTR_CODE_Eurostat == data$CNTR_CODE[i])
 			if(length(rowInStocks)==0){
 				rowInStocks <- which(stocks$CNTR_CODE_iso2== data$CNTR_CODE[i])
 			} 
 		} else if (nchar(data$CNTR_CODE[i])==3){
-			stocks <- stocksCNT
 			rowInStocks <- which(stocks$CNTR_CODE_iso3 == data$CNTR_CODE[i])
 		}
 		if(length(rowInStocks)==0){

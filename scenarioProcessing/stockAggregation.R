@@ -7,7 +7,7 @@
 # Benjamin Blanz 2024
 # 
 
-sectorColPattern <- 'ALL|TOTAL|^[A-Z]$|AGR|MIN|MFG|EGW|CNS|TRD|OTP|WTP|CMN|OFI|OBS|REA|PUB|OSG|agr|coa-oil-gas|pro|ely-elc|ser|air-wtp-tran'
+sectorColPattern <- 'ALL|TOTAL|^[A-Z]$|AGR|MIN|MFG|EGW|CNS|TRD|OTP|WTP|CMN|OFI|OBS|REA|PUB|OSG|agr|coa-oil-gas|coa\\.oil\\.gas|pro|ely-elc|ely\\.elc|ser|air-wtp-tran|air\\.wtp\\.tran'
 
 # read scenario file with NUTS3 data ####
 library(readxl)
@@ -35,7 +35,7 @@ stocksNUTS3$CNTR_NAME <- countrycode(stocksNUTS3$CNTR_CODE_iso3,'iso3c','iso.nam
 stocksNUTS3$CNTR_CODE_Eurostat <- countrycode(stocksNUTS3$CNTR_CODE_iso3,'iso3c','eurostat')
 stocksNUTS3$CNTR_CODE_iso2 <- countrycode(stocksNUTS3$CNTR_CODE_iso3,'iso3c','iso2c')
 stocksNUTS3 <- stocksNUTS3[,c(1:5,29,30,31,28,6:27)]
-write.csv(stocksNUTS3,file = 'helperData/nuts3LevelStocks.csv',row.names=F)
+write.csv(stocksNUTS3,file = 'helperData/nuts3LevelStocksNACE.csv',row.names=F)
 codes <- stocksNUTS3[,1:9]
 write.csv(codes,file = 'helperData/nuts3fid4Codes.csv',row.names=F)
 sink('helperData/nuts3LevelStocksMetadata.csv')
@@ -65,13 +65,32 @@ stocksCNT$CNTR_NAME <- countrycode(stocksCNT$CNTR_CODE_iso3,'iso3c','iso.name.en
 stocksCNT$CNTR_CODE_Eurostat <- countrycode(stocksCNT$CNTR_CODE_iso3,'iso3c','eurostat')
 stocksCNT$CNTR_CODE_iso2 <- countrycode(stocksCNT$CNTR_CODE_iso3,'iso3c','iso2c')
 stocksCNT <- stocksCNT[,c(25,26,27,24,2:23)]
-write.csv(stocksCNT,file = 'helperData/countryLevelStocks.csv',row.names = F)
+write.csv(stocksCNT,file = 'helperData/countryLevelStocksNACE.csv',row.names = F)
 sink('helperData/countryLevelStocksMetadata.csv')
 cat(sprintf('Unit %s,,\n',stockUnit))
 cat(sprintf('Labels,, \n'))
 cat(sprintf('Sector,Label,Type\n'))
 sectorCols <- grep(sectorColPattern,names(stocksNUTS3),perl = T)
 for(n in colnames(stocksNUTS3)[sectorCols]){	
+	cat(sprintf('"%s", "%s", "%s"\n',n,stockLabels[n],stockTypes[n]))
+}
+sink()
+
+# aggregate to NUTS2 level ####
+library(nuts)
+rlang::local_options(nuts.verbose = "quiet")
+nutsSheet <- read_excel("helperData/NUTS2021.xlsx", 
+												sheet = "NUTS & SR 2021", range = "A1:H2125")
+stocksNUTS2 <- aggregateNUTS3ToNUTS2(stocksNUTS3,
+																		 codes[,c('fid4','CNTR_CODE','CNTR_NAME','CNTR_CODE_iso2','CNTR_CODE_iso3','CNTR_CODE_Eurostat')],
+																		 nutsSheet,sectorColPattern)
+write.csv(stocksNUTS2,file = 'helperData/nuts2LevelStocksNACE.csv',row.names = F)
+sink('helperData/countryLevelStocksMetadata.csv')
+cat(sprintf('Unit %s,,\n',stockUnit))
+cat(sprintf('Labels,, \n'))
+cat(sprintf('Sector,Label,Type\n'))
+sectorCols <- grep(sectorColPattern,names(stocksNUTS2),perl = T)
+for(n in colnames(stocksNUTS2)[sectorCols]){	
 	cat(sprintf('"%s", "%s", "%s"\n',n,stockLabels[n],stockTypes[n]))
 }
 sink()

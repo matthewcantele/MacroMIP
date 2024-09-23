@@ -13,6 +13,7 @@ files <- list.files('scenarios',pattern = 'NACE.csv',recursive = T)
 files <- paste0('scenarios/',files)
 files[length(files)+1] <- 'helperData/countryLevelStocksNACE.csv'
 files[length(files)+1] <- 'helperData/nuts3LevelStocksNACE.csv'
+files[length(files)+1] <- 'helperData/nuts2LevelStocksNACE.csv'
 
 # Mapping of sectors
 for (file in files){

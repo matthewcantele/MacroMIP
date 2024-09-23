@@ -15,6 +15,7 @@ files <- list.files('scenarios',pattern = 'NACE.csv',recursive = T)
 files <- paste0('scenarios/',files)
 files[length(files)+1] <- 'helperData/countryLevelStocksNACE.csv'
 files[length(files)+1] <- 'helperData/nuts3LevelStocksNACE.csv'
+files[length(files)+1] <- 'helperData/nuts2LevelStocksNACE.csv'
 
 # Mapping of sectors
 for (file in files){
@@ -31,8 +32,8 @@ for (file in files){
 	GRACEcodes <- unique(sector_mapping$`GRACE Code`)
 	for(GRACEcode in GRACEcodes){
 		dataGRACE[[GRACEcode]] <- NA
-		rows <- which(sector_mapping$`GRACE Code` == GRACEcode)
-		NACEcodes <- strsplit(paste(sector_mapping$`NACE Code`[rows],collapse = '.'),'\\.')[[1]]
+		col <- which(sector_mapping$`GRACE Code` == GRACEcode)
+		NACEcodes <- strsplit(paste(sector_mapping$`NACE Code`[col],collapse = '.'),'\\.')[[1]]
 		if(sum(NACEcodes %in% colnames(data))==length(NACEcodes)){
 			if(length(NACEcodes)>1){
 				dataGRACE[[GRACEcode]] <- rowSums(data[,NACEcodes])
