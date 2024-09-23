@@ -156,12 +156,11 @@ sectors_nace_62_colors =  cm.tab20(np.linspace(0, 1, len(sectors_nace_62)))
 #%% load data
 print('loading data')
 # `data` is a dictionary with variable names as keys and loaded matrices as values
-base = loadmat('data/Baseline.mat')
-shock_eq = loadmat('data/Earthquake_Q1.mat')
-shock_f = loadmat('data/Flood_Q1.mat')
-shock_eq_f = loadmat('data/Earthquake_Q1_Flood_Q5.mat')
-shock_f_eq = loadmat('data/Flood_Q1_Earthquake_Q5.mat')
-
+base = loadmat('data/IIASA_ABM/Baseline.mat')
+shock_eq = loadmat('data/IIASA_ABM/Earthquake_Q1.mat')
+shock_f = loadmat('data/IIASA_ABM/Flood_Q1.mat')
+shock_eq_f = loadmat('data/IIASA_ABM/Earthquake_Q1_Flood_Q5.mat')
+shock_f_eq = loadmat('data/IIASA_ABM/Flood_Q1_Earthquake_Q5.mat')
 
 scenarios = [shock_f, shock_eq, shock_f_eq, shock_eq_f]
 scenarios_names = ["flood", "earthquake", "consecutive flood earthquake", "cosecutive earthquake flood"]
@@ -278,10 +277,9 @@ for s in range(len(scenarios)):
         scenarios_dif[s][thingsWeCareAbout[j]] = scenarios[s][thingsWeCareAbout[j]]-base[thingsWeCareAbout[j]]
         scenarios_dif_rel[s][thingsWeCareAbout[j]] = (scenarios[s][thingsWeCareAbout[j]]-base[thingsWeCareAbout[j]])/base[thingsWeCareAbout[j]]
 
-
 #%% time series plots
 print('plotting time series')
-figdir = 'figures/timeseries'
+figdir = 'figures/IIASA_ABM/timeseries'
 
 plotTypes = ['abs','dif_rel']
 
@@ -354,11 +352,11 @@ for plotType in plotTypes:
 
 #%% spatial plot
 print('plotting maps')
-basefigdir = 'figures/maps'
+basefigdir = 'figures/IIASA_ABM/maps'
 
 subfig_size = (15,15)
 nrows=3
-ncols=6
+ncols=5
 max_val = 0
 min_val = 0
 for s in range(len(scenarios)):
@@ -367,12 +365,11 @@ for s in range(len(scenarios)):
 max_val = max(abs(min_val),abs(max_val))
 min_val = -max_val
 
-scenariosToPlot = [0,1,2,3]
+scenariosToPlot = [1,0,2,3]
 
 plotType = 'dif_rel'
 
 for scenario_index in scenariosToPlot:
-    timestep = 'Q4'
     if os.path.isfile(basefigdir + '/map-'+ thing + '_in_' + scenarios_names[scenario_index] + '_scenario_as_' + plotType + '.png'):
         print('skipping spatial plots for scenario ' + scenarios_names[scenario_index] + ' file exists.')
     else:
@@ -390,7 +387,7 @@ for scenario_index in scenariosToPlot:
         fig.suptitle(thing + ' in ' + scenarios_names[scenario_index] + ' scenario as ' + plotType)
         row = 0
         col = 0
-        for index, timestep in enumerate(time_steps):
+        for index, timestep in enumerate(time_steps[1:]):
 
             thing_df_1 = thing_df[thing_df['time']==timestep]
 
@@ -483,7 +480,7 @@ country_index = 22
 scenario_index = 1
 base_radius = 0.5
 nrows=3
-ncols=6
+ncols=5
 subfig_size=[3,3]
 
 wedgeprops={"edgecolor":"k","linewidth":0.5}
@@ -569,11 +566,11 @@ def addBrokenDonutPlot(piedata,ax,halo=False):
 
 #%% pie / broken donutcharts by country
 nrows=3
-ncols=6
+ncols=5
 
-for bakedGoodType in ['pies','brokendonouts']:
+for bakedGoodType in ['brokendonouts']:
     print('plotting '+bakedGoodType+' by country')
-    basefigdir = 'figures/'+bakedGoodType
+    basefigdir = 'figures/IIASA_ABM/'+bakedGoodType
     for country_index in range(len(country_codes)):
         for scenario_index in [0,1,2,3]:
             figdir = basefigdir + '/' + scenarios_names[scenario_index]
@@ -666,7 +663,7 @@ ncols=6
 
 for bakedGoodType in ['pies','brokendonouts']:
     print('plotting '+bakedGoodType+' by time')
-    basefigdir = 'figures/'+bakedGoodType
+    basefigdir = 'figures/IIASA_ABM/'+bakedGoodType
     for time_index, timestep in enumerate(time_steps):
         for scenario_index in [0,1,2,3]:
             figir =basefigdir + '/' + scenarios_names[scenario_index]
@@ -885,7 +882,7 @@ min_val = -max_val
 scenariosToPlot = [0,1,2,3]
 
 for insetType in ['bars','brokendonut']:
-    basefigdir='figures/maps-' + insetType
+    basefigdir='figures/IIASA_ABM/maps-' + insetType
     for scenario_index in scenariosToPlot:
         figdir = basefigdir + '/' + scenarios_names[scenario_index]
         if os.path.isfile(figdir+'/brokendonut-'+ sector_thing + '_in_' +
@@ -907,7 +904,7 @@ for insetType in ['bars','brokendonut']:
 
             # initialize the figure
             nrows=3
-            ncols=6
+            ncols=5
             fig, axes = plt.subplots(nrows, ncols, figsize=(subfig_size[0]*ncols,subfig_size[1]*nrows))
             plt.tight_layout()
             fig.suptitle(thing + ' in ' + scenarios_names[scenario_index] + ' scenario as ' + plotType)
