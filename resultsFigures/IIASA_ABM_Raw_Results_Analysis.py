@@ -156,16 +156,26 @@ sectors_nace_62_colors =  cm.tab20(np.linspace(0, 1, len(sectors_nace_62)))
 #%% load data
 print('loading data')
 # `data` is a dictionary with variable names as keys and loaded matrices as values
-base = loadmat('data/IIASA_ABM/Baseline.mat')
-shock_eq = loadmat('data/IIASA_ABM/Earthquake_Q1.mat')
-shock_f = loadmat('data/IIASA_ABM/Flood_Q1.mat')
-shock_eq_f = loadmat('data/IIASA_ABM/Earthquake_Q1_Flood_Q5.mat')
-shock_f_eq = loadmat('data/IIASA_ABM/Flood_Q1_Earthquake_Q5.mat')
 
-scenarios = [shock_f, shock_eq, shock_f_eq, shock_eq_f]
-scenarios_names = ["flood", "earthquake", "consecutive flood earthquake", "cosecutive earthquake flood"]
-scenarios_colors = ["deepskyblue", "indianred","deepskyblue", "indianred"]
-scenarios_linest = ["-","-","--","--"]
+# initial result set
+# base = loadmat('data/IIASA_ABM/Baseline.mat')
+# shock_eq = loadmat('data/IIASA_ABM/Earthquake_Q1.mat')
+# shock_f = loadmat('data/IIASA_ABM/Flood_Q1.mat')
+# shock_eq_f = loadmat('data/IIASA_ABM/Earthquake_Q1_Flood_Q5.mat')
+# shock_f_eq = loadmat('data/IIASA_ABM/Flood_Q1_Earthquake_Q5.mat')
+
+# result set 06.11.2024
+base = loadmat('data/IIASA_ABM/2024-06-11/No_Shock_1_100_MC_30.mat')
+shock_eq = loadmat('data/IIASA_ABM/2024-06-11/Earthquake_Q1_1_100_MC_30.mat')
+shock_f = loadmat('data/IIASA_ABM/2024-06-11/Flood_Q1_1_100_MC_30.mat')
+shock_f_eq = loadmat('data/IIASA_ABM/2024-06-11/FL_Q1_EQ_Q5_1_100_MC_30.mat')
+shock_eq_f = loadmat('data/IIASA_ABM/2024-06-11/EQ_Q1_FL_Q5_1_100_MC_30.mat')
+shock_d = loadmat('data/IIASA_ABM/2024-06-11/Drought_Q1_1_100_MC_30.mat')
+
+scenarios = [shock_d, shock_f, shock_eq, shock_f_eq, shock_eq_f]
+scenarios_names = ["draught","flood", "earthquake", "consecutive flood earthquake", "cosecutive earthquake flood"]
+scenarios_colors = ["orange", "deepskyblue", "indianred","deepskyblue", "indianred"]
+scenarios_linest = ["-","-","-","--","--"]
 
 #%% load and prepare map shape
 print('loading map')
@@ -572,7 +582,7 @@ for bakedGoodType in ['brokendonouts']:
     print('plotting '+bakedGoodType+' by country')
     basefigdir = 'figures/IIASA_ABM/'+bakedGoodType
     for country_index in range(len(country_codes)):
-        for scenario_index in [0,1,2,3]:
+        for scenario_index in [0,1,2,3,4]:
             figdir = basefigdir + '/' + scenarios_names[scenario_index]
             if os.path.isfile(figdir+'/' + bakedGoodType +'-'+ sector_thing + '_in_' + scenarios_names[scenario_index] + '_scenario_as_' + plotType +
                         ' for country ' + country_codes_3[country_index] + '.png'):
@@ -661,11 +671,12 @@ print('plotting pies by time')
 nrows=5
 ncols=6
 
-for bakedGoodType in ['pies','brokendonouts']:
+# [pies,brokendonuts]
+for bakedGoodType in ['brokendonouts']:
     print('plotting '+bakedGoodType+' by time')
     basefigdir = 'figures/IIASA_ABM/'+bakedGoodType
-    for time_index, timestep in enumerate(time_steps):
-        for scenario_index in [0,1,2,3]:
+    for scenario_index in [0,1,2,3,4]:
+        for time_index, timestep in enumerate(time_steps):
             figir =basefigdir + '/' + scenarios_names[scenario_index]
             if os.path.isfile(figdir+'/' + bakedGoodType +'-'+ sector_thing + '_in_' + scenarios_names[scenario_index] + '_scenario_as_' + plotType +
                             ' for time ' +timestep + '.png'):
@@ -879,9 +890,9 @@ sns.set(style="whitegrid", palette="pastel", color_codes=True)
 max_val = max(abs(min_val),abs(max_val))
 min_val = -max_val
 
-scenariosToPlot = [0,1,2,3]
+scenariosToPlot = [0]
 
-for insetType in ['bars','brokendonut']:
+for insetType in ['brokendonut']:
     basefigdir='figures/IIASA_ABM/maps-' + insetType
     for scenario_index in scenariosToPlot:
         figdir = basefigdir + '/' + scenarios_names[scenario_index]
