@@ -8,11 +8,14 @@
 
 library(readxl)
 sector_mapping <- read_excel("helperData/GTAP_NACE_sector_mapping.xlsx")
-sectorColPattern <- 'ALL|TOTAL|^[A-Z]$|AGR|MIN|MFG|EGW|CNS|TRD|OTP|WTP|CMN|OFI|OBS|REA|PUB|OSG|agr|coa.oil.gas|pro|ely.elc|ser|air.wtp.tran'
+source('sectorColRegex.R')
 
 # NACE files for which we will map the sectors to GRACE
-files <- list.files('scenarios',pattern = 'NACE.csv',recursive = T)
-files <- paste0('scenarios/',files)
+files <- paste0('scenarios/',
+								list.files('scenarios',pattern = 'NACE.csv',recursive = T))
+files <- c(files,
+					 paste0('scenarios/Danube Draught/',
+					 			 list.files('scenarios/Danube Draught',pattern = 'NACE-rel.csv',recursive = T)))
 files[length(files)+1] <- 'helperData/countryLevelStocksNACE.csv'
 files[length(files)+1] <- 'helperData/nuts3LevelStocksNACE.csv'
 files[length(files)+1] <- 'helperData/nuts2LevelStocksNACE.csv'
@@ -42,6 +45,7 @@ for (file in files){
 			}
 		}
 	}
-	write.csv(dataGRACE,gsub('NACE.csv','GRACE.csv',file),row.names = F)
+	dataGRACE[is.na(dataGRACE)]<-0
+	write.csv(dataGRACE,gsub('NACE','GRACE',file),row.names = F)
 	cat('done\n')
 }

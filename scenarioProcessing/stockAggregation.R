@@ -81,6 +81,7 @@ library(nuts)
 rlang::local_options(nuts.verbose = "quiet")
 nutsSheet <- read_excel("helperData/NUTS2021.xlsx", 
 												sheet = "NUTS & SR 2021", range = "A1:H2125")
+source('funAggregateNuts2CNT.R')
 stocksNUTS2 <- aggregateNUTS3ToNUTS2(stocksNUTS3,
 																		 codes[,c('fid4','CNTR_CODE','CNTR_NAME','CNTR_CODE_iso2','CNTR_CODE_iso3','CNTR_CODE_Eurostat')],
 																		 nutsSheet,sectorColPattern)

@@ -5,12 +5,11 @@
 #
 
 library(nuts)
-rlang::local_options(nuts.verbose = "quiet")
+suppressWarnings(rlang::local_options(nuts.verbose = "quiet"))
 library(readxl)
 nutsSheet <- read_excel("helperData/NUTS2021.xlsx", 
 												sheet = "NUTS & SR 2021", range = "A1:H2125")
-sectorColPattern <- 'ALL|TOTAL|^[A-Z]$|AGR|MIN|MFG|EGW|CNS|TRD|OTP|WTP|CMN|OFI|OBS|REA|PUB|OSG|agr|coa-oil-gas|coa\\.oil\\.gas|pro|ely-elc|ely\\.elc|ser|air-wtp-tran|air\\.wtp\\.tran'
-
+source('sectorColRegex.R')
 source('funAggregateNuts2CNT.R')
 codes <- read.csv("helperData/nuts3fid4Codes.csv")
 codes <- codes[,c('fid4','CNTR_CODE','CNTR_NAME','CNTR_CODE_iso2','CNTR_CODE_iso3','CNTR_CODE_Eurostat')]
@@ -43,6 +42,7 @@ for(f.i in 1:length(files)){
 	data <- read.csv(file,row.names=NULL)
 	if(!('fid4'%in%names(data))){
 		cat('    fid4 col missing probably already country level data\n')
+		write.csv(data,gsub('.csv','-aggCNT.csv',file),row.names = F)
 	} else {
 		data.CNT <- aggregateNUTS3ToCountry(data,codes,sectorColPattern)
 		write.csv(data.CNT,gsub('.csv','-aggCNT.csv',file),row.names = F)

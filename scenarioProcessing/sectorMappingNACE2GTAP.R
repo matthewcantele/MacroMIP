@@ -7,10 +7,14 @@
 
 library(readxl)
 GTAP_NACE_sector_mapping <- read_excel("helperData/GTAP_NACE_sector_mapping.xlsx")
+source('sectorColRegex.R')
 
 # files for which we will map the sectors to GTAP
-files <- list.files('scenarios',pattern = 'NACE.csv',recursive = T)
-files <- paste0('scenarios/',files)
+files <- paste0('scenarios/',
+								list.files('scenarios',pattern = 'NACE.csv',recursive = T))
+files <- c(files,
+					 paste0('scenarios/Danube Draught/',
+					 			 list.files('scenarios/Danube Draught',pattern = 'NACE-rel.csv',recursive = T)))
 files[length(files)+1] <- 'helperData/countryLevelStocksNACE.csv'
 files[length(files)+1] <- 'helperData/nuts3LevelStocksNACE.csv'
 files[length(files)+1] <- 'helperData/nuts2LevelStocksNACE.csv'
@@ -20,7 +24,7 @@ for (file in files){
 	cat(sprintf('GTAPifying %s...',file))
 	data <- read.csv(file)
 	names(data)[names(data)=='ALL'] <- 'TOTAL'
-	dataCols <- grep('ALL|TOTAL|^[A-Z]$',names(data),perl = T)
+	dataCols <- grep(sectorColPattern,names(data),perl = T)
 	for( i in dataCols){
 		data[,i] <- suppressWarnings(as.numeric(data[,i]))
 	}
@@ -40,6 +44,7 @@ for (file in files){
 					data[,NACEcodes]
 			}
 	}
-	write.csv(dataGTAP,gsub('NACE.csv','GTAP.csv',file),row.names = F)
+	dataGTAP[is.na(dataGTAP)]<-0
+	write.csv(dataGTAP,gsub('NACE','GTAP',file),row.names = F)
 	cat('done\n')
 }
