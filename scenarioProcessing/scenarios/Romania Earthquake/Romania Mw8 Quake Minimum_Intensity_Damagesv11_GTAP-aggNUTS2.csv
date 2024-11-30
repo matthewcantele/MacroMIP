@@ -1,0 +1,324 @@
+"CNTR_CODE","CNTR_NAME","CNTR_CODE_iso2","CNTR_CODE_iso3","CNTR_CODE_Eurostat","NUTS2","NAME","AGR","MIN","MFG","EGW","CNS","TRD","OTP","WTP","CMN","OFI","OBS","REA","PUB","OSG"
+"AL","Albania","AL","ALB","AL","AL01","Veri",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"AL","Albania","AL","ALB","AL","AL02","Qender",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"AL","Albania","AL","ALB","AL","AL03","Jug",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"AT","Austria","AT","AUT","AT","AT21","Kärnten",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"AT","Austria","AT","AUT","AT","AT22","Steiermark",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"AT","Austria","AT","AUT","AT","AT32","Salzburg",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"AT","Austria","AT","AUT","AT","AT33","Tirol",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"AT","Austria","AT","AUT","AT","AT34","Vorarlberg",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"AT","Austria","AT","AUT","AT","AT31","Oberösterreich",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"AT","Austria","AT","AUT","AT","AT11","Burgenland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"AT","Austria","AT","AUT","AT","AT12","Niederösterreich",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"AT","Austria","AT","AUT","AT","AT13","Wien",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"BE","Belgium","BE","BEL","BE","BE10","Région de Bruxelles-Capitale/ Brussels Hoofdstedelijk Gewest",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"BE","Belgium","BE","BEL","BE","BE21","Prov. Antwerpen",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"BE","Belgium","BE","BEL","BE","BE22","Prov. Limburg (BE)",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"BE","Belgium","BE","BEL","BE","BE23","Prov. Oost-Vlaanderen",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"BE","Belgium","BE","BEL","BE","BE33","Prov. Liège",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"BE","Belgium","BE","BEL","BE","BE34","Prov. Luxembourg (BE)",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"BE","Belgium","BE","BEL","BE","BE35","Prov. Namur",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"BE","Belgium","BE","BEL","BE","BE31","Prov. Brabant Wallon",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"BE","Belgium","BE","BEL","BE","BE32","Prov. Hainaut",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"BE","Belgium","BE","BEL","BE","BE24","Prov. Vlaams-Brabant",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"BE","Belgium","BE","BEL","BE","BE25","Prov. West-Vlaanderen",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"BG","Bulgaria","BG","BGR","BG","BG31","Северозападен",0.0834808102139713,0.00270490303005451,0.166876762994708,0.609565832565192,0.886622925913975,1.23353494171517,0.0166549583703094,0.586314753190643,0.208241526100017,0.134294601499566,0.405952810705161,9.77375979576299,2.33850648305531,0.105008774046303
+"BG","Bulgaria","BG","BGR","BG","BG32","Северен централен",2.7928697824233,0.130965196832695,5.47646237484687,8.35524775306931,11.9363282189608,14.8850363240305,0.501831258174276,7.07504595404719,2.62179022917143,1.7376740741293,5.39945879115923,135.282739769395,31.1037860932227,1.39669078085277
+"BG","Bulgaria","BG","BGR","BG","BG33","Североизточен",1.03079483895711,0.0430709808736871,2.18194120326625,6.89573378214008,9.33552470509744,13.0969385362633,0.253417306998606,6.22514046887484,2.26095183834332,1.47515633152556,4.53086169801588,99.691895975463,26.1001997651706,1.1720087156326
+"BG","Bulgaria","BG","BGR","BG","BG34","Югоизточен",0.236837224460287,0.0161611822621162,0.952298248046532,1.85247880901425,2.92229773811692,3.71086424804109,0.0631456256266468,1.76382069298252,0.628722942961371,0.406181324223043,1.23108489653591,34.1337792480919,7.09171099650701,0.318447642984908
+"BG","Bulgaria","BG","BGR","BG","BG41","Югозападен",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"BG","Bulgaria","BG","BGR","BG","BG42","Южен централен",0.00697820687551356,0.000330543959610974,0.0246371914777406,0.111517736873593,0.169643844922212,0.244050352869799,0.0020153710844522,0.116000218210265,0.0399642490605887,0.0254977587364483,0.0753141050478028,1.88049789950893,0.433849743801162,0.0194816777490137
+"CH","Switzerland","CH","CHE","CH","CH05","Ostschweiz",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"CH","Switzerland","CH","CHE","CH","CH06","Zentralschweiz",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"CH","Switzerland","CH","CHE","CH","CH07","Ticino",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"CH","Switzerland","CH","CHE","CH","CH03","Nordwestschweiz",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"CH","Switzerland","CH","CHE","CH","CH04","Zürich",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"CH","Switzerland","CH","CHE","CH","CH01","Région lémanique",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"CH","Switzerland","CH","CHE","CH","CH02","Espace Mittelland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"CY","Cyprus","CY","CYP","CY","CY00","Κύπρος",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"CZ","Czechia","CZ","CZE","CZ","CZ01","Praha",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"CZ","Czechia","CZ","CZE","CZ","CZ02","Střední Čechy",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"CZ","Czechia","CZ","CZE","CZ","CZ03","Jihozápad",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"CZ","Czechia","CZ","CZE","CZ","CZ04","Severozápad",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"CZ","Czechia","CZ","CZE","CZ","CZ05","Severovýchod",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"CZ","Czechia","CZ","CZE","CZ","CZ08","Moravskoslezsko",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"CZ","Czechia","CZ","CZE","CZ","CZ06","Jihovýchod",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"CZ","Czechia","CZ","CZE","CZ","CZ07","Střední Morava",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE13","Freiburg",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE12","Karlsruhe",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE23","Oberpfalz",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE14","Tübingen",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE21","Oberbayern",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE22","Niederbayern",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE27","Schwaben",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE24","Oberfranken",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE25","Mittelfranken",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE26","Unterfranken",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE60","Hamburg",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE71","Darmstadt",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE72","Gießen",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE73","Kassel",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE80","Mecklenburg-Vorpommern",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE91","Braunschweig",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE92","Hannover",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE93","Lüneburg",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE94","Weser-Ems",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DEA1","Düsseldorf",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE30","Berlin",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE40","Brandenburg",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE50","Bremen",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DEA5","Arnsberg",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DEB1","Koblenz",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DEB2","Trier",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DEB3","Rheinhessen-Pfalz",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DEC0","Saarland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DED2","Dresden",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DED4","Chemnitz",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DED5","Leipzig",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DEE0","Sachsen-Anhalt",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DEF0","Schleswig-Holstein",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DEA2","Köln",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DEA3","Münster",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DEA4","Detmold",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DE11","Stuttgart",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE","DEG0","Thüringen",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DK","Denmark","DK","DNK","DK","DK04","Midtjylland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DK","Denmark","DK","DNK","DK","DK05","Nordjylland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DK","Denmark","DK","DNK","DK","DK01","Hovedstaden",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DK","Denmark","DK","DNK","DK","DK02","Sjælland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"DK","Denmark","DK","DNK","DK","DK03","Syddanmark",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"EE","Estonia","EE","EST","EE","EE00","Eesti",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"EL","Greece","GR","GRC","EL","EL30","Aττική",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"EL","Greece","GR","GRC","EL","EL41","Βόρειο Αιγαίο",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"EL","Greece","GR","GRC","EL","EL42","Νότιο Αιγαίο",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"EL","Greece","GR","GRC","EL","EL43","Κρήτη",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"EL","Greece","GR","GRC","EL","EL51","Aνατολική Μακεδονία, Θράκη",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"EL","Greece","GR","GRC","EL","EL52","Κεντρική Μακεδονία",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"EL","Greece","GR","GRC","EL","EL53","Δυτική Μακεδονία",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"EL","Greece","GR","GRC","EL","EL64","Στερεά Ελλάδα",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"EL","Greece","GR","GRC","EL","EL65","Πελοπόννησος",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"EL","Greece","GR","GRC","EL","EL61","Θεσσαλία",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"EL","Greece","GR","GRC","EL","EL62","Ιόνια Νησιά",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"EL","Greece","GR","GRC","EL","EL63","Δυτική Ελλάδα",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"EL","Greece","GR","GRC","EL","EL54","Ήπειρος",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES","ES11","Galicia",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES","ES12","Principado de Asturias",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES","ES13","Cantabria",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES","ES21","País Vasco",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES","ES22","Comunidad Foral de Navarra",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES","ES23","La Rioja",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES","ES24","Aragón",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES","ES51","Cataluña",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES","ES52","Comunitat Valenciana",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES","ES53","Illes Balears",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES","ES61","Andalucía",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES","ES62","Región de Murcia",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES","ES63","Ciudad de Ceuta",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES","ES64","Ciudad de Melilla",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES","ES70","Canarias",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES","ES43","Extremadura",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES","ES30","Comunidad de Madrid",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES","ES41","Castilla y León",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES","ES42","Castilla-La Mancha",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FI","Finland","FI","FIN","FI","FI19","Länsi-Suomi",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FI","Finland","FI","FIN","FI","FI20","Åland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FI","Finland","FI","FIN","FI","FI1B","Helsinki-Uusimaa",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FI","Finland","FI","FIN","FI","FI1C","Etelä-Suomi",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FI","Finland","FI","FIN","FI","FI1D","Pohjois- ja Itä-Suomi",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRB0","Centre — Val de Loire",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRD2","Haute-Normandie",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRC1","Bourgogne",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRC2","Franche-Comté",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRD1","Basse-Normandie",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRF2","Champagne-Ardenne",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRE1","Nord-Pas de Calais",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRE2","Picardie",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRF1","Alsace",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FR10","Ile-de-France",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRI2","Limousin",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRI3","Poitou-Charentes",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRJ1","Languedoc-Roussillon",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRJ2","Midi-Pyrénées",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRK1","Auvergne",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRK2","Rhône-Alpes",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRL0","Provence-Alpes-Côte d’Azur",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRM0","Corse",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRI1","Aquitaine",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRF3","Lorraine",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRG0","Pays de la Loire",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"FR","France","FR","FRA","FR","FRH0","Bretagne",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"HR","Croatia","HR","HRV","HR","HR02","Panonska Hrvatska",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"HR","Croatia","HR","HRV","HR","HR03","Jadranska Hrvatska",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"HR","Croatia","HR","HRV","HR","HR05","Grad Zagreb",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"HR","Croatia","HR","HRV","HR","HR06","Sjeverna Hrvatska",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"HU","Hungary","HU","HUN","HU","HU12","Pest",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"HU","Hungary","HU","HUN","HU","HU31","Észak-Magyarország",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"HU","Hungary","HU","HUN","HU","HU21","Közép-Dunántúl",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"HU","Hungary","HU","HUN","HU","HU22","Nyugat-Dunántúl",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"HU","Hungary","HU","HUN","HU","HU23","Dél-Dunántúl",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"HU","Hungary","HU","HUN","HU","HU11","Budapest",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"HU","Hungary","HU","HUN","HU","HU32","Észak-Alföld",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"HU","Hungary","HU","HUN","HU","HU33","Dél-Alföld",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IE","Ireland","IE","IRL","IE","IE04","Northern and Western",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IE","Ireland","IE","IRL","IE","IE05","Southern",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IE","Ireland","IE","IRL","IE","IE06","Eastern and Midland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IS","Iceland","IS","ISL","IS","IS00","Ísland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITC3","Liguria",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITC4","Lombardia",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITF3","Campania",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITF4","Puglia",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITF1","Abruzzo",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITF2","Molise",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITG1","Sicilia",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITG2","Sardegna",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITF5","Basilicata",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITF6","Calabria",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITH3","Veneto",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITH4","Friuli-Venezia Giulia",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITH5","Emilia-Romagna",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITI1","Toscana",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITI2","Umbria",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITI3","Marche",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITI4","Lazio",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITH1","Provincia Autonoma di Bolzano/Bozen",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITH2","Provincia Autonoma di Trento",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITC1","Piemonte",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT","ITC2","Valle d’Aosta/Vallée d’Aoste",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"LT","Lithuania","LT","LTU","LT","LT01","Sostinės regionas",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"LT","Lithuania","LT","LTU","LT","LT02","Vidurio ir vakarų Lietuvos regionas",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"LU","Luxembourg","LU","LUX","LU","LU00","Luxembourg",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"LV","Latvia","LV","LVA","LV","LV00","Latvija",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"ME","Montenegro","ME","MNE","ME","ME00","Црна Гора",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"MK","North Macedonia","MK","MKD","MK","MK00","Северна Македонија",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"MT","Malta","MT","MLT","MT","MT00","Malta",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"NL","Netherlands (the)","NL","NLD","NL","NL12","Friesland (NL)",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"NL","Netherlands (the)","NL","NLD","NL","NL23","Flevoland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"NL","Netherlands (the)","NL","NLD","NL","NL13","Drenthe",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"NL","Netherlands (the)","NL","NLD","NL","NL21","Overijssel",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"NL","Netherlands (the)","NL","NLD","NL","NL22","Gelderland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"NL","Netherlands (the)","NL","NLD","NL","NL34","Zeeland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"NL","Netherlands (the)","NL","NLD","NL","NL31","Utrecht",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"NL","Netherlands (the)","NL","NLD","NL","NL32","Noord-Holland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"NL","Netherlands (the)","NL","NLD","NL","NL33","Zuid-Holland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"NL","Netherlands (the)","NL","NLD","NL","NL11","Groningen",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"NL","Netherlands (the)","NL","NLD","NL","NL41","Noord-Brabant",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"NL","Netherlands (the)","NL","NLD","NL","NL42","Limburg (NL)",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"NO","Norway","NO","NOR","NO","NO07","Nord-Norge",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"NO","Norway","NO","NOR","NO","NO08","Oslo og Viken",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"NO","Norway","NO","NOR","NO","NO02","Innlandet",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"NO","Norway","NO","NOR","NO","NO06","Trøndelag",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"NO","Norway","NO","NOR","NO","NO09","Agder og Sør-Østlandet",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"NO","Norway","NO","NOR","NO","NO0A","Vestlandet",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PL","Poland","PL","POL","PL","PL21","Małopolskie",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PL","Poland","PL","POL","PL","PL22","Śląskie",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PL","Poland","PL","POL","PL","PL41","Wielkopolskie",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PL","Poland","PL","POL","PL","PL42","Zachodniopomorskie",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PL","Poland","PL","POL","PL","PL43","Lubuskie",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PL","Poland","PL","POL","PL","PL51","Dolnośląskie",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PL","Poland","PL","POL","PL","PL71","Łódzkie",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PL","Poland","PL","POL","PL","PL72","Świętokrzyskie",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PL","Poland","PL","POL","PL","PL81","Lubelskie",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PL","Poland","PL","POL","PL","PL82","Podkarpackie",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PL","Poland","PL","POL","PL","PL84","Podlaskie",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PL","Poland","PL","POL","PL","PL91","Warszawski stołeczny",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PL","Poland","PL","POL","PL","PL92","Mazowiecki regionalny",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PL","Poland","PL","POL","PL","PL62","Warmińsko-mazurskie",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PL","Poland","PL","POL","PL","PL63","Pomorskie",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PL","Poland","PL","POL","PL","PL52","Opolskie",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PL","Poland","PL","POL","PL","PL61","Kujawsko-pomorskie",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PT","Portugal","PT","PRT","PT","PT11","Norte",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PT","Portugal","PT","PRT","PT","PT15","Algarve",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PT","Portugal","PT","PRT","PT","PT30","Região Autónoma da Madeira",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PT","Portugal","PT","PRT","PT","PT16","Centro (PT)",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PT","Portugal","PT","PRT","PT","PT17","Área Metropolitana de Lisboa",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PT","Portugal","PT","PRT","PT","PT18","Alentejo",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"PT","Portugal","PT","PRT","PT","PT20","Região Autónoma dos Açores",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"RO","Romania","RO","ROU","RO","RO11","Nord-Vest",0.128262558464334,0.0063776568628285,0.281888309890055,0.684061940261527,0.772479105640136,1.90505470910854,0.0445596557775126,0.357069131036839,0.585385220013035,0.187567029859437,0.390046730612004,3.0322330944339,5.80686278817246,0.801775997849438
+"RO","Romania","RO","ROU","RO","RO12","Centru",12.834910730103,1.16042028191423,35.9842918247286,48.197589751694,51.3881052759112,119.780129692323,5.97489185440123,22.4506869121525,38.2919116566277,12.5368369826791,26.8060998902222,198.039791454184,399.07870450376,55.1023397996743
+"RO","Romania","RO","ROU","RO","RO21","Nord-Est",82.6802034138935,5.27573285172344,123.260340965079,198.011362393364,197.17863770541,445.641518439599,34.2267216986963,83.527695547193,146.893828949447,49.3974242504494,107.118607777644,679.61537681604,1594.73983142701,220.19189471068
+"RO","Romania","RO","ROU","RO","RO22","Sud-Est",222.110110738084,16.4978148066583,331.667331758236,260.913035827547,261.187142471789,553.966595278485,65.32169790881,103.831333480227,185.698410648819,63.6667714899262,138.379970720515,1009.88197576926,2060.14674535161,284.452426848268
+"RO","Romania","RO","ROU","RO","RO31","Sud-Muntenia",94.828938237939,9.54573065927197,234.870117265314,173.359701893952,181.424349447489,395.401642289777,35.2725703400197,74.1111109029603,129.855362572155,43.4703600857734,94.2293624391628,748.258437944818,1402.84980069604,193.696896209931
+"RO","Romania","RO","ROU","RO","RO32","Bucureşti-Ilfov",123.194732569609,80.1803066241374,1497.78543440876,2332.08876072454,2180.10134082371,4671.00963984749,533.053428814291,875.498926718755,1593.65649799999,557.014955627986,1213.75271310544,6840.33241746138,18069.8744807232,2494.9774381281
+"RO","Romania","RO","ROU","RO","RO41","Sud-Vest Oltenia",4.54632473368652,0.170703941846998,6.17541927310009,10.3166108492828,11.4218195596026,27.0520114833522,1.02156432349853,5.07042563500931,8.4932325482101,2.74970402964227,5.80960446451671,46.3025560522818,86.4911133239596,11.9421624412536
+"RO","Romania","RO","ROU","RO","RO42","Vest",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"SE","Sweden","SE","SWE","SE","SE11","Stockholm",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"SE","Sweden","SE","SWE","SE","SE12","Östra Mellansverige",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"SE","Sweden","SE","SWE","SE","SE21","Småland med öarna",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"SE","Sweden","SE","SWE","SE","SE22","Sydsverige",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"SE","Sweden","SE","SWE","SE","SE23","Västsverige",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"SE","Sweden","SE","SWE","SE","SE31","Norra Mellansverige",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"SE","Sweden","SE","SWE","SE","SE32","Mellersta Norrland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"SE","Sweden","SE","SWE","SE","SE33","Övre Norrland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"SI","Slovenia","SI","SVN","SI","SI03","Vzhodna Slovenija",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"SI","Slovenia","SI","SVN","SI","SI04","Zahodna Slovenija",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"SK","Slovakia","SK","SVK","SK","SK01","Bratislavský kraj",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"SK","Slovakia","SK","SVK","SK","SK02","Západné Slovensko",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"SK","Slovakia","SK","SVK","SK","SK03","Stredné Slovensko",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"SK","Slovakia","SK","SVK","SK","SK04","Východné Slovensko",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TR10","İstanbul",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TR21","Tekirdağ, Edirne, Kırklareli",0.0238216055164379,0.000242912257447107,0.00726765709298598,0.0527259826483374,0.12852327076474,0.138077529786916,0.0129687961165705,0.0979925145770479,0.0934700762480071,0.0185654268718711,0.0131411431849028,2.10054536911953,0.476623248809206,0.0273238866967906
+"TR","Turkey","TR","TUR","TR","TR22","Balıkesir, Çanakkale",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TR31","İzmir",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TR32","Aydın, Denizli, Muğla",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TR33","Manisa, Afyonkarahisar, Kütahya, Uşak",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TR41","Bursa, Eskişehir, Bilecik",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TR42","Kocaeli, Sakarya, Düzce, Bolu, Yalova",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TR51","Ankara",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TR52","Konya, Karaman",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TR61","Antalya, Isparta, Burdur",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TR62","Adana, Mersin",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TR63","Hatay, Kahramanmaraş, Osmaniye",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TR71","Kırıkkale, Aksaray, Niğde, Nevşehir, Kırşehir",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TR72","Kayseri, Sivas, Yozgat",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TR81","Zonguldak, Karabük, Bartın",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TR82","Kastamonu, Çankırı, Sinop",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TR83","Samsun, Tokat, Çorum, Amasya",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TR90","Trabzon, Ordu, Giresun, Rize, Artvin, Gümüşhane",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TRA1","Erzurum, Erzincan, Bayburt",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TRA2","Ağrı, Kars, Iğdır, Ardahan",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TRB1","Malatya, Elazığ, Bingöl, Tunceli",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TRB2","Van, Muş, Bitlis, Hakkari",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TRC1","Gaziantep, Adıyaman, Kilis",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TRC2","Şanlıurfa, Diyarbakır",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR","TRC3","Mardin, Batman, Şırnak, Siirt",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKC1","Tees Valley and Durham",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKC2","Northumberland and Tyne and Wear",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKD1","Cumbria",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKD3","Greater Manchester",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKD4","Lancashire",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKD6","Cheshire",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKD7","Merseyside",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKE1","East Yorkshire and Northern Lincolnshire",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKE2","North Yorkshire",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKE3","South Yorkshire",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKE4","West Yorkshire",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKF1","Derbyshire and Nottinghamshire",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKF2","Leicestershire, Rutland and Northamptonshire",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKF3","Lincolnshire",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKG1","Herefordshire, Worcestershire and Warwickshire",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKG2","Shropshire and Staffordshire",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKG3","West Midlands",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKH1","East Anglia",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKH2","Bedfordshire and Hertfordshire",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKH3","Essex",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKI3","Inner London — West",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKI4","Inner London — East",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKI5","Outer London — East and North East",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKI6","Outer London — South",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKI7","Outer London — West and North West",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKJ1","Berkshire, Buckinghamshire and Oxfordshire",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKJ2","Surrey, East and West Sussex",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKJ3","Hampshire and Isle of Wight",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKJ4","Kent",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKK1","Gloucestershire, Wiltshire and Bristol/Bath area",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKK2","Dorset and Somerset",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKK3","Cornwall and Isles of Scilly",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKK4","Devon",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKL1","West Wales and The Valleys",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKL2","East Wales",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKM5","North Eastern Scotland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKM6","Highlands and Islands",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKM7","Eastern Scotland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKM8","West Central Scotland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKM9","Southern Scotland",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UK","United Kingdom","GB","GBR","UK","UKN0","Northern Ireland",0,0,0,0,0,0,0,0,0,0,0,0,0,0

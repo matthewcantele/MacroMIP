@@ -1,0 +1,41 @@
+"CNTR_CODE","CNTR_NAME","CNTR_CODE_iso2","CNTR_CODE_iso3","CNTR_CODE_Eurostat","agr","coa.oil.gas","pro","ely.elc","ser","air.wtp.tran"
+"AL","Albania","AL","ALB","AL",0,0,0,0,0,0
+"AND","Andorra","AD","AND","AD",0,0,0,0,0,0
+"AT","Austria","AT","AUT","AT",0,0,0,0,0,0
+"BE","Belgium","BE","BEL","BE",0,0,0,0,0,0
+"BG","Bulgaria","BG","BGR","BG",4.15096086293018,0.193232806958164,34.0526332136434,17.8245439136624,420.960257028684,0.837064520254291
+"BIH","Bosnia and Herzegovina","BA","BIH","BA",0,0,0,0,0,0
+"CH","Switzerland","CH","CHE","CH",0,0,0,0,0,0
+"CY","Cyprus","CY","CYP","CY",0,0,0,0,0,0
+"CZ","Czechia","CZ","CZE","CZ",0,0,0,0,0,0
+"DE","Germany","DE","DEU","DE",0,0,0,0,0,0
+"DK","Denmark","DK","DNK","DK",0,0,0,0,0,0
+"EE","Estonia","EE","EST","EE",0,0,0,0,0,0
+"EL","Greece","GR","GRC","EL",0,0,0,0,0,0
+"ES","Spain","ES","ESP","ES",0,0,0,0,0,0
+"FI","Finland","FI","FIN","FI",0,0,0,0,0,0
+"FR","France","FR","FRA","FR",0,0,0,0,0,0
+"HR","Croatia","HR","HRV","HR",0,0,0,0,0,0
+"HU","Hungary","HU","HUN","HU",0,0,0,0,0,0
+"IE","Ireland","IE","IRL","IE",0,0,0,0,0,0
+"IS","Iceland","IS","ISL","IS",0,0,0,0,0,0
+"IT","Italy","IT","ITA","IT",0,0,0,0,0,0
+"LI","Liechtenstein","LI","LIE","LI",0,0,0,0,0,0
+"LT","Lithuania","LT","LTU","LT",0,0,0,0,0,0
+"LU","Luxembourg","LU","LUX","LU",0,0,0,0,0,0
+"LV","Latvia","LV","LVA","LV",0,0,0,0,0,0
+"MDA","Moldova (the Republic of)","MD","MDA","MD",11.0355124181904,0.211382584792385,49.4318761403344,22.9875377645255,782.625964283227,12.0390688307091
+"ME","Montenegro","ME","MNE","ME",0,0,0,0,0,0
+"MK","North Macedonia","MK","MKD","MK",0,0,0,0,0,0
+"MT","Malta","MT","MLT","MT",0,0,0,0,0,0
+"NL","Netherlands (the)","NL","NLD","NL",0,0,0,0,0,0
+"NO","Norway","NO","NOR","NO",0,0,0,0,0,0
+"PL","Poland","PL","POL","PL",0,0,0,0,0,0
+"PT","Portugal","PT","PRT","PT",0,0,0,0,0,0
+"RO","Romania","RO","ROU","RO",540.32348298178,112.837086822415,5113.49869819466,3023.57112338064,48204.203755829,674.915434595494
+"SE","Sweden","SE","SWE","SE",0,0,0,0,0,0
+"SI","Slovenia","SI","SVN","SI",0,0,0,0,0,0
+"SK","Slovakia","SK","SVK","SK",0,0,0,0,0,0
+"SRB","Serbia","RS","SRB","RS",0,0,0,0,0,0
+"TR","Turkey","TR","TUR","TR",0.0238216055164379,0.000242912257447107,0.135790927857726,0.0527259826483374,2.96573919529427,0.0129687961165705
+"UK","United Kingdom","GB","GBR","UK",0,0,0,0,0,0
