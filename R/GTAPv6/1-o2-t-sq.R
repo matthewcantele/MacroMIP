@@ -19,7 +19,7 @@ ENDW <- data.table::fread("./mappings/labor_diff.csv")
 
 # scenario
 scenario <- "1-o2-t"
-forcings <- c(1, 2, 4, 6, 8, 10) * -1
+forcings <- c(1, .25, .5, 1.5, 2, 2.5) * -1
 sfid <- "sq"
 
 # shock base
@@ -48,8 +48,6 @@ model <- ems_model(
     "tpm"
   )
 )
-
-source_model <- "GTAP-INT"
 
 write_dir <- file.path(".", "runs", source_model)
 
@@ -110,7 +108,8 @@ for (f in seq_along(forcings)) {
   if (!dir.exists(result_dir)) {
     dir.create(result_dir, recursive = TRUE)
   }
-
+  
+  file.copy(file.path(write_dir, write_sub_dir, "model_diagnostics.txt"), result_dir)
   saveRDS(outputs, file.path(result_dir, "results.RDS"))
   rm(outputs)
 }
