@@ -21,7 +21,7 @@ ALLTIME <- c(2017, 2018, 2020, 2022, 2024, 2026, 2028, 2030, 2035, 2040, 2045, 2
 
 # scenario
 scenario <- "1-o2-t"
-forcings <- c(1, 2, 4, 6, 8, 10) * -1
+forcings <- c(1, .25, .5, 1.5, 2, 2.5) * -1
 sfid <- "sq"
 
 # shock base
@@ -92,7 +92,8 @@ for (f in seq_along(forcings)) {
     model = model,
     shock = shock
   )
-
+  
+  
   # run the Docker-based solver and parse results
   outputs <- ems_solve(
     cmf_path = cmf_path,
@@ -114,7 +115,8 @@ for (f in seq_along(forcings)) {
   if (!dir.exists(result_dir)) {
     dir.create(result_dir, recursive = TRUE)
   }
-
+  
+  file.copy(file.path(write_dir, write_sub_dir, "model_diagnostics.txt"), result_dir)
   saveRDS(outputs, file.path(result_dir, "results.RDS"))
   rm(outputs)
 }
