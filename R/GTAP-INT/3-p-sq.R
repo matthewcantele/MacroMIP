@@ -39,7 +39,7 @@ model_files <- ems_example(source_model)
 model <- ems_model(
   model_file = model_files[["model_file"]],
   closure_file = model_files[["closure_file"]],
-  var_omit <- c(
+  var_omit = c(
     "atall",
     "tfd",
     "avaall",
@@ -96,10 +96,11 @@ for (f in seq_along(forcings)) {
   # run the Docker-based solver and parse results
   outputs <- ems_solve(
     cmf_path = cmf_path,
+    n_tasks = 4,
     matrix_method = "SBBD",
     solution_method = "mod_midpoint",
-    n_subintervals = 4,
-    steps = c(2, 4, 6)
+    n_subintervals = 6,
+    steps = c(2, 4, 8)
   )
 
   if (!all.equal(afeall,

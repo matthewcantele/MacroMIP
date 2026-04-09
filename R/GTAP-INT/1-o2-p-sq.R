@@ -39,7 +39,7 @@ model_files <- ems_example(source_model)
 model <- ems_model(
   model_file = model_files[["model_file"]],
   closure_file = model_files[["closure_file"]],
-  var_omit <- c(
+  var_omit = c(
     "atall",
     "tfd",
     "avaall",
@@ -51,8 +51,6 @@ model <- ems_model(
     "tpm"
   )
 )
-
-source_model <- "GTAP-INT"
 
 write_dir <- file.path(".", "runs", source_model)
 
@@ -96,9 +94,11 @@ for (f in seq_along(forcings)) {
     # run the Docker-based solver and parse results
     outputs <- ems_solve(
       cmf_path = cmf_path,
+      n_tasks = 4,
+      n_subintervals = 2,
       matrix_method = "SBBD",
       solution_method = "mod_midpoint",
-      steps = c(2, 4, 6)
+      steps = c(2, 4, 8)
     )
 
     if (!all.equal(qo,
@@ -115,6 +115,7 @@ for (f in seq_along(forcings)) {
       dir.create(result_dir, recursive = TRUE)
     }
 
+    file.copy(file.path(write_dir, write_sub_dir, "model_diagnostics.txt"), result_dir)
     saveRDS(outputs, file.path(result_dir, "results.RDS"))
     rm(outputs)
   }

@@ -35,7 +35,7 @@ model_files <- ems_example(source_model)
 model <- ems_model(
   model_file = model_files[["model_file"]],
   closure_file = model_files[["closure_file"]],
-  var_omit <- c(
+  var_omit = c(
     "atall",
     "tfd",
     "avaall",

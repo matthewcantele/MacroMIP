@@ -113,6 +113,7 @@ for (model in c("rational", "recursive")) {
     # run the Docker-based solver and parse results
     outputs <- ems_solve(
       cmf_path = cmf_path,
+      n_tasks = 4,
       matrix_method = "SBBD",
       solution_method = "mod_midpoint",
       steps = c(2, 4, 6)
