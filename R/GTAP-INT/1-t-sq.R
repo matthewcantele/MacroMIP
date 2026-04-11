@@ -21,8 +21,8 @@ ALLTIME <- c(2017, 2018, 2020, 2022, 2024, 2026, 2028, 2030, 2035, 2040, 2045, 2
 
 # scenario
 scenario <- "1-t"
-forcings <- c(4, 1, 2, 6, 8, 10) * -1
-sub_forcings <- c(1, 0, 2, 3, 4, 5) * -1
+forcings <- c(1, 2, 4) * -1
+sub_forcings <- c(0, 1, 2) * -1
 sfid <- "sq"
 
 # shock base
@@ -101,7 +101,7 @@ for (f in seq_along(forcings)) {
   outputs <- ems_solve(
     cmf_path = cmf_path,
     n_tasks = 4,
-    n_subintervals = 6,
+    n_subintervals = 4,
     matrix_method = "SBBD",
     solution_method = "mod_midpoint",
     steps = c(2, 4, 8)
