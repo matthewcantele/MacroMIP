@@ -40,7 +40,7 @@ Each scenario is run at a standard forcing (hash `0`) plus variants:
 
 ## Results
 
-176 completed runs uploaded in the format `results/<model>/<scenario>-<sfid>-<hash>/`. Each run directory contains `results.RDS` (`teems` output) and `model_diagnostics.txt`.
+Completed runs uploaded in the format `results/<model>/<scenario>-<sfid>-<hash>/`. Each run directory contains `results.RDS` (`teems` output) and `model_diagnostics.txt`.
 
 ## Dependencies
 
