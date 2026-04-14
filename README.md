@@ -23,7 +23,7 @@ Each scenario is run at a standard forcing (hash `0`) plus variants:
 | `1-t` | Temporary (2018) equivalent of above | GTAPv6, GTAPv7, GTAP-INT, GTAP-RE | `afeall` |
 | `1-o2-p` | Persistent −1% country-level labour supply, Spain | GTAP-INT, GTAP-RE | `qo` / `qe` |
 | `1-o2-t` | Temporary (2018) equivalent of above | GTAPv6, GTAPv7, GTAP-INT, GTAP-RE | `qo` / `qe` |
-| `2-p` | Persistent +4% agriculture TFP, France | GTAP-INT, GTAP-RE | `aoall` |
+| `2-p` | Persistent +4% increase in agriculture output, France | GTAP-INT, GTAP-RE | `aoall` |
 | `2-t` | Temporary (2018) equivalent of above | GTAPv6, GTAPv7, GTAP-INT, GTAP-RE | `aoall` |
 | `3-p` | Persistent −5% capital productivity in manufacturing, Germany | GTAP-INT, GTAP-RE | `afeall` |
 | `3-t` | Temporary (2018) equivalent of above | GTAPv6, GTAPv7, GTAP-INT, GTAP-RE | `afeall` |
@@ -45,5 +45,5 @@ Completed runs uploaded in the format `results/<model>/<scenario>-<sfid>-<hash>/
 ## Dependencies
 
 - [`teems`](https://teemsphere.github.io/) R package — see the [manual](https://teemsphere.github.io/) for installation, data loading, and solver setup
-- GTAP 11c database (HAR files; paths set via `GTAP11c_dat`, `GTAP11c_par`, `GTAP11c_set` environment variables)
+- GTAP 11c database
 - [teems-solver](https://github.com/teemsphere/teems-solver) Docker image
