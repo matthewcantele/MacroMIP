@@ -44,6 +44,10 @@ Completed runs uploaded in the format `results/<model>/<scenario>-<sfid>-<hash>/
 
 ## Dependencies
 
-- [`teems`](https://teemsphere.github.io/) R package — see the [manual](https://teemsphere.github.io/) for installation, data loading, and solver setup
+- [`teems`](https://teemsphere.github.io/) R package v0.0.4 — see the [manual](https://teemsphere.github.io/) for installation, data loading, and solver setup. Note that current scripts may encounter issues with the latest release.
+```r
+# install.packages("remotes")
+remotes::install_github("teemsphere/teems-R@v0.0.4")
+```
 - GTAP 11c database
 - [teems-solver](https://github.com/teemsphere/teems-solver) Docker image
