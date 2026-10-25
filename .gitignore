@@ -168,8 +168,10 @@ resultsFigures/figures/*
 resultsFigures/data/*
 .Rproj.user
 
-runs
-results
+first_runs
+second_runs
+first_results
+second_results
 archive
 *.pdf
 .RData

@@ -16,8 +16,8 @@ eeq,mnfcs
 ele,mnfcs
 ely,mnfcs
 fmp,mnfcs
-frs,mnfcs
-fsh,livestock
+frs,frsfsh
+fsh,frsfsh
 gas,mnfcs
 gdt,mnfcs
 gro,gro
@@ -47,13 +47,13 @@ oxt,mnfcs
 p_c,mnfcs
 pcr,food
 pdr,pdr
-pfb,mnfcs
+pfb,pfb
 ppp,mnfcs
 rmk,livestock
 ros,svces
 rpp,mnfcs
 rsa,svces
-sgr,sgr
+sgr,food
 tex,mnfcs
 trd,svces
 v_f,v_f
