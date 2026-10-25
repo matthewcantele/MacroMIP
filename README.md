@@ -1,6 +1,6 @@
 # MacroMIP
 
-Stylized shock experiment scripts and results for the MacroMIP s1 protocol (v1-2, 17.03.2026), implemented across four GTAP model variants using the [`teems`](https://teemsphere.github.io/) R package.
+Stylized shock experiment scripts and results for the MacroMIP s1 protocol (v1-2, 17.03.2026), implemented across three GTAP model variants using the [`teems`](https://teemsphere.github.io/) R package.
 
 ## Models
 
@@ -8,7 +8,6 @@ Stylized shock experiment scripts and results for the MacroMIP s1 protocol (v1-2
 |---|---|---|---|
 | `R/GTAPv6` | GTAPv6.2, shipped with `teems` | LU | Static, classic format |
 | `R/GTAPv7` | GTAPv7.1, shipped with `teems` | LU | Static, standard format |
-| `R/GTAP-INT` | GTAP-INTv1, `models/GTAP-INT` | SBBD | Intertemporal, GTAPv6 format; vendored from [teems-models](https://github.com/teemsphere/teems-models) `9880dac` (dropped from `teems` 1.0.0). **Not run this round**: its investment block is unstable over long horizons (a one-year shock drifts away from baseline, about ×2 every 5 years after 2030) |
 | `R/GTAP-RE` | GTAP-REv2 (GTAPv7.1 core), shipped with `teems` | SBBD | Rational expectations; run as both `rational` (default) and adaptive `recursive` (`REDELTA = 0`) |
 
 All intertemporal runs use GTAP 11c data (reference year 2017) with timesteps 2017, 2018, 2020–2030 (biennial), 2035–2050 (5-yearly) and 2060–2100 (decadal). Static runs use no timesteps.
@@ -75,7 +74,7 @@ Sector definitions:
 - **Manufacturing**: NACE C, i.e. processed food and the GTAP manufacturing sectors (`tex` to `omf`). Mining, utilities, construction and forestry are not shocked.
 - Capital goods (`cgds`, GTAPv6 format) are never shocked.
 
-Sensitivity runs: the primary runs of `1-p`, `1-t`, `2-p` and `2-t` are repeated with livestock treated as non-agriculture (pair 1: the "other sectors" shock; pair 2: unshocked), as in earlier GTAP-INT/v6/v7 runs. Their directories carry the suffix `-lvsnonag` (e.g. `1-p-sq-0-lvsnonag`).
+Sensitivity runs: the primary runs of `1-p`, `1-t`, `2-p` and `2-t` are repeated with livestock treated as non-agriculture (pair 1: the "other sectors" shock; pair 2: unshocked), as in earlier runs. Their directories carry the suffix `-lvsnonag` (e.g. `1-p-sq-0-lvsnonag`).
 
 ## Solving
 
