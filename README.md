@@ -14,7 +14,7 @@ All intertemporal runs use GTAP 11c data (reference year 2017) with timesteps 20
 
 ## Aggregations
 
-All models and scenarios share one regional aggregation; the sectoral aggregation depends on the scenario. Endowments are `capital`, `land`, `natlres`, `sklab` and `unsklab` (`labor_diff.csv`).
+All models and scenarios share one regional and one sectoral aggregation. Endowments are `capital`, `land`, `natlres`, `sklab` and `unsklab` (`labor_diff.csv`).
 
 ### Regions
 
@@ -36,22 +36,21 @@ Rest of North America (`xna`) is in `lac`.
 
 ### Sectors
 
-Each scenario pair keeps the shocked sectors at GTAP resolution and aggregates the rest. Aggregates common to all three mappings:
+`manufacturing.csv`, 27 sectors from the 65 GTAP 11c sectors, used for every scenario so that the broad sectors are composed identically across the pairs. The manufacturing sectors and construction are at GTAP resolution; the rest is aggregated.
 
 | Sector | GTAP sectors |
 |---|---|
-| `food` | `b_t` `cmt` `mil` `ofd` `omt` `pcr` `sgr` `vol` |
+| `crops` | `c_b` `gro` `ocr` `osd` `pdr` `pfb` `v_f` `wht` |
 | `livestock` | `ctl` `oap` `rmk` `wol` |
 | `frsfsh` | `frs` `fsh` |
-| `svces` | `afs` `atp` `cmn` `dwe` `edu` `hht` `ins` `obs` `ofi` `osg` `otp` `ros` `rsa` `trd` `whs` `wtp` `wtr` (plus `cns` in `agriculture.csv`) |
+| `mining` | `coa` `gas` `oil` `oxt` |
+| `food` | `b_t` `cmt` `mil` `ofd` `omt` `pcr` `sgr` `vol` |
+| manufacturing (19, unaggregated) | `bph` `chm` `eeq` `ele` `fmp` `i_s` `lea` `lum` `mvh` `nfm` `nmm` `ome` `omf` `otn` `p_c` `ppp` `rpp` `tex` `wap` |
+| `util` | `ely` `gdt` |
+| `cns` | `cns` |
+| `svces` | `afs` `atp` `cmn` `dwe` `edu` `hht` `ins` `obs` `ofi` `osg` `otp` `ros` `rsa` `trd` `whs` `wtp` `wtr` |
 
-| Mapping | Scenarios | Sectors | Disaggregated | Other aggregates |
-|---|---|---|---|---|
-| `agri_cns.csv` | `1-p`, `1-t`, `1-o2-p`, `1-o2-t` | 14 | crops `c_b` `gro` `ocr` `osd` `pdr` `pfb` `v_f` `wht`; construction `cns` | `mnfcs`: `bph` `chm` `coa` `eeq` `ele` `ely` `fmp` `gas` `gdt` `i_s` `lea` `lum` `mvh` `nfm` `nmm` `oil` `ome` `omf` `otn` `oxt` `p_c` `ppp` `rpp` `tex` `wap` |
-| `agriculture.csv` | `2-p`, `2-t` | 13 | crops `c_b` `gro` `ocr` `osd` `pdr` `pfb` `v_f` `wht` | `mnfcs` as above; `cns` in `svces` |
-| `manufacturing.csv` | `3-p`, `3-t` | 27 | manufacturing `bph` `chm` `eeq` `ele` `fmp` `i_s` `lea` `lum` `mvh` `nfm` `nmm` `ome` `omf` `otn` `p_c` `ppp` `rpp` `tex` `wap`; construction `cns` | `crops`: `c_b` `gro` `ocr` `osd` `pdr` `pfb` `v_f` `wht`; `mining`: `coa` `gas` `oil` `oxt`; `util`: `ely` `gdt` |
-
-The shocked sectors are those in the "Disaggregated" column other than `cns` in `manufacturing.csv`, plus `livestock` in pairs 1 and 2 and the aggregated `food` (processed food) in pair 3.
+Pairs 1 and 2 were first run on smaller sector sets (`agri_cns.csv`, 14 sectors; `agriculture.csv`, 13 sectors) that kept the eight crops separate but put mining and utilities inside one manufacturing aggregate and, in pair 2, construction inside services. They were rerun on the 27-sector set; the eight crops take the same shock, so the shocked set is unchanged.
 
 ## Experiment protocol
 
@@ -70,7 +69,7 @@ Each scenario is run at the primary forcing (hash `0`) plus the optional values 
 
 Sector definitions:
 
-- **Agriculture**: all crops (`c_b`, `gro`, `ocr`, `osd`, `pdr`, `pfb`, `v_f`, `wht`) and livestock (`ctl`, `oap`, `rmk`, `wol`), "all crops and farming types" (protocol 2.2.1).
+- **Agriculture**: `crops` and `livestock`, "all crops and farming types" (protocol 2.2.1). Forestry and fishing are not included.
 - **Manufacturing**: NACE C, i.e. processed food and the GTAP manufacturing sectors (`tex` to `omf`). Mining, utilities, construction and forestry are not shocked.
 - Capital goods (`cgds`, GTAPv6 format) are never shocked.
 
@@ -78,7 +77,7 @@ Sensitivity runs: the primary runs of `1-p`, `1-t`, `2-p` and `2-t` are repeated
 
 ## Solving
 
-- Intertemporal models: SBBD. Gragg 2-4-6 for shocks up to 10%; adaptive DoPri54 via `ems_RK()` above that (the ±20/±40 agricultural productivity shocks). On GTAP-RE `2-p` +40 DoPri54 matched Gragg over 4 subintervals (median relative difference 1e-5, 100% of levels to 4 figures) in a third of the time; on small shocks Gragg over one subinterval is faster.
+- Intertemporal models: SBBD. Gragg 2-4-6 for shocks up to 10%; adaptive DoPri54 via `ems_RK()` above that (the ±20/±40 agricultural productivity shocks). On GTAP-RE `2-p` +40 (on the earlier 13-sector set) DoPri54 matched Gragg over 4 subintervals (median relative difference 1e-5, 100% of levels to 4 figures) in a third of the time; on small shocks Gragg over one subinterval is faster.
 - Static models: LU, Gragg 2-4-6, with subintervals for shocks above 10%.
 - A Gragg run below 80% accuracy (results to 4 significant figures) is repeated with twice the subintervals, up to 8.
 
@@ -110,9 +109,9 @@ Existing results are skipped, so an interrupted batch resumes where it stopped. 
 |---|---|
 | `euPartners.csv` | EU28, Norway, Switzerland and the main extra-EU trade partners resolved individually, WB7 for the rest (generated by `eu_partners_mapping.R`) |
 | `euWB7.csv` | Earlier 37-region aggregation: WB7 with EU28, Norway and Switzerland resolved individually (generated by `eu_WB7_mapping.R`) |
-| `agri_cns.csv` | Sector mapping isolating the crops, livestock and construction (pair 1) |
-| `agriculture.csv` | Sector mapping isolating the crops and livestock (pair 2) |
-| `manufacturing.csv` | Sector mapping isolating the NACE C manufacturing sectors (pair 3) |
+| `manufacturing.csv` | Sector mapping for all scenarios: the NACE C manufacturing sectors and construction resolved individually |
+| `agri_cns.csv` | Earlier 14-sector mapping for pair 1, isolating the crops, livestock and construction |
+| `agriculture.csv` | Earlier 13-sector mapping for pair 2, isolating the crops and livestock |
 | `labor_diff.csv` | Endowment mapping with differentiated labour (`sklab`, `unsklab`) |
 
 ## Results

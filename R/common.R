@@ -62,10 +62,14 @@ sector_set <- function(map) {
   unique(fread(file.path("mappings", paste0(map, ".csv")))$mapping)
 }
 
+# one sector set for every scenario, so the broad sectors are composed
+# identically across the pairs (pairs 1 and 2 were first run on smaller sets,
+# agri_cns.csv and agriculture.csv, and rerun on this one)
+SECTOR_MAP <- "manufacturing"
+
 # agriculture: all crops and farming types (protocol 2.2.1), forestry and
-# fishing (frsfsh) excluded
-CROPS <- c("c_b", "gro", "ocr", "osd", "pdr", "pfb", "v_f", "wht")
-AGRI <- c(CROPS, "livestock")
+# fishing (frsfsh) excluded; the eight GTAP crops are one aggregate
+AGRI <- c("crops", "livestock")
 
 # manufacturing: NACE C, processed food included
 MANUF <- c(
@@ -138,45 +142,45 @@ NAMES <- list(
 # to sectors outside `target` paired with each forcing
 SCENARIOS <- list(
   `1-p` = list(
-    type = "sector_endw", map = "agri_cns", region = "esp", endw = LABOUR,
+    type = "sector_endw", map = SECTOR_MAP, region = "esp", endw = LABOUR,
     target = c(AGRI, "cns"), timing = "persistent",
     forcings = c(-4, -1, -2, -6, -8, -10),
     other = c(-4, -1, -2, -6, -8, -10) * 0.25
   ),
   `1-t` = list(
-    type = "sector_endw", map = "agri_cns", region = "esp", endw = LABOUR,
+    type = "sector_endw", map = SECTOR_MAP, region = "esp", endw = LABOUR,
     target = c(AGRI, "cns"), timing = "temporary",
     forcings = c(-4, -1, -2, -6, -8, -10),
     other = c(-1, 0, -2, -3, -4, -5)
   ),
   `1-o2-p` = list(
-    type = "labour_supply", map = "agri_cns", region = "esp",
+    type = "labour_supply", map = SECTOR_MAP, region = "esp",
     timing = "persistent",
     forcings = c(-1, -0.25, -0.5, -1.5, -2, -2.5)
   ),
   `1-o2-t` = list(
-    type = "labour_supply", map = "agri_cns", region = "esp",
+    type = "labour_supply", map = SECTOR_MAP, region = "esp",
     timing = "temporary",
     forcings = c(-1, -0.25, -0.5, -1.5, -2, -2.5)
   ),
   `2-p` = list(
-    type = "output", map = "agriculture", region = "fra",
+    type = "output", map = SECTOR_MAP, region = "fra",
     target = AGRI, timing = "persistent",
     forcings = c(4, -40, -20, 20, 40)
   ),
   `2-t` = list(
-    type = "output", map = "agriculture", region = "fra",
+    type = "output", map = SECTOR_MAP, region = "fra",
     target = AGRI, timing = "temporary",
     forcings = c(4, -40, -20, 20, 40)
   ),
   `3-p` = list(
-    type = "sector_endw", map = "manufacturing", region = "deu",
+    type = "sector_endw", map = SECTOR_MAP, region = "deu",
     endw = "capital", target = MANUF, timing = "persistent",
     forcings = c(-5, -1, -2.5, -7.5, -10),
     other = 0
   ),
   `3-t` = list(
-    type = "sector_endw", map = "manufacturing", region = "deu",
+    type = "sector_endw", map = SECTOR_MAP, region = "deu",
     endw = "capital", target = MANUF, timing = "temporary",
     forcings = c(-5, -1, -2.5, -7.5, -10),
     other = 0

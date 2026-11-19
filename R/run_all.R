@@ -28,7 +28,7 @@ for (s in scenarios) {
 }
 
 # largest first so the long intertemporal runs do not trail at the end:
-# intertemporal before static, the 27-sector manufacturing aggregation first
+# intertemporal before static, then by sector count and subintervals
 size <- vapply(jobs, \(j) {
   MODELS[[j$model]]$intertemporal * 100 + length(sector_set(j$map)) + j$n_subintervals
 }, numeric(1))
