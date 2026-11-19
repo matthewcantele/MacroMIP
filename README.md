@@ -81,27 +81,55 @@ Sensitivity runs: the primary runs of `1-p`, `1-t`, `2-p` and `2-t` are repeated
 - Static models: LU, Gragg 2-4-6, with subintervals for shocks above 10%.
 - A Gragg run below 80% accuracy (results to 4 significant figures) is repeated with twice the subintervals, up to 8.
 
+## Setup
+
+Linux or macOS (jobs are forked; on Windows use WSL), with R ≥ 4.4 and Docker.
+
+1. Install the R packages: `install.packages(c("teems", "data.table"))` (`teems` ≥ 1.0.1).
+2. Install the [teems-solver](https://github.com/teemsphere/teems-solver) Docker image ≥ 1.1.0, tagged `teems:latest`, following the instructions in that repository.
+3. Point three environment variables at the GTAP 11c database files (licensed by GTAP and not part of this repository), for example in `~/.Renviron`:
+
+   ```sh
+   GTAP11c_dat=/path/to/gsdfdat.har
+   GTAP11c_par=/path/to/gsdfpar.har
+   GTAP11c_set=/path/to/gsdfset.har
+   ```
+
+Everything else a run needs is in the repository (`R/`, `mappings/`) or ships with `teems` (the three models and their closures). A run stops at the start with a list of whatever is missing.
+
 ## Running
 
 From the project root:
 
 ```sh
-Rscript R/GTAP-RE/1-p-sq.R                # one model x scenario
-Rscript R/run_all.R                       # everything (144 jobs)
+Rscript R/run_all.R --dry-run             # list the jobs, nothing is solved
+Rscript R/GTAPv7/1-t-sq.R                 # one model x scenario (a quick first run: 7 static jobs)
 Rscript R/run_all.R GTAP-RE 3-p 3-t       # filter by model and/or scenario
-Rscript R/run_all.R --dry-run             # list the jobs
+Rscript R/run_all.R                       # everything (144 jobs)
 ```
 
 Jobs run in parallel as forked processes, each with its own solver container. Resources are set by environment variables:
 
 | Variable | Default | Meaning |
 |---|---|---|
-| `MACROMIP_WORKERS` | 8 | concurrent jobs |
+| `MACROMIP_WORKERS` | cores ÷ (tasks × threads), at most 8 | concurrent jobs |
 | `MACROMIP_TASKS` | 2 | MPI tasks per intertemporal job |
 | `MACROMIP_THREADS` | 2 | OpenMP threads per task (static jobs: LU on tasks × threads threads) |
 | `MACROMIP_OVERWRITE` | 0 | `1` reruns jobs whose results exist |
 
-Existing results are skipped, so an interrupted batch resumes where it stopped. Each batch writes `results/run_log_<timestamp>.csv` with the status, solution method, accuracy and minutes of every job; the solver log of a job is in `runs/<model>/<run>/model_diagnostics.txt` and its R log in `macromip.log` alongside.
+Existing results are skipped, so an interrupted batch resumes where it stopped. Each batch writes `results/run_log_<timestamp>.csv` with the status, solution method, accuracy and minutes of every job; the solver log of a job is in `runs/<model>/<run>/model_diagnostics.txt` and its R log in `macromip.log` alongside. `runs/` and `results/` are created as needed and are not tracked by git.
+
+What to expect, from our runs on a 32-core, 125 GB machine with 8 concurrent jobs:
+
+| | Static (GTAPv6, GTAPv7) | Intertemporal (GTAP-RE) |
+|---|---|---|
+| Jobs in the full set | 48 | 96 |
+| Time per job | 3–20 minutes | 55–75 minutes |
+| Memory per job | | about 8 GB |
+| Disk per job, `runs/` | about 0.3 GB | about 2.4 GB |
+| Disk per job, `results/` | about 20 MB | about 0.26 GB |
+
+The full set therefore needs roughly 270 GB of disk and about 14 hours on such a machine. Lower `MACROMIP_WORKERS` if memory is short.
 
 ## Mappings
 
@@ -117,9 +145,3 @@ Existing results are skipped, so an interrupted batch resumes where it stopped. 
 ## Results
 
 Completed runs are written as `results/<model>/<scenario>-<sfid>-<hash>/`. Each run directory contains `results.RDS` (`teems` output) and `model_diagnostics.txt`.
-
-## Dependencies
-
-- [`teems`](https://teemsphere.github.io/) R package ≥ 1.0.1 (CRAN): `install.packages("teems")`
-- [teems-solver](https://github.com/teemsphere/teems-solver) Docker image ≥ 1.1.0, tagged `teems:latest`
-- GTAP 11c database, located through the environment variables `GTAP11c_dat`, `GTAP11c_par` and `GTAP11c_set` (e.g. in `~/.Renviron`)

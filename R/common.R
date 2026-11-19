@@ -5,12 +5,22 @@
 #   Rscript R/GTAP-RE/1-p-sq.R     # one model x scenario
 #   Rscript R/run_all.R            # every model x scenario, in parallel
 #
-# Requires teems >= 1.0.1 and the teems-solver image >= 1.1.0.
+# Requires teems >= 1.0.1, the teems-solver image >= 1.1.0 and the GTAP 11c
+# database (see "Setup" in README.md); check_setup() reports what is missing.
 
-require(teems)
-require(data.table)
-
-stopifnot(packageVersion("teems") >= "1.0.1")
+for (pkg in c("teems", "data.table")) {
+  if (!requireNamespace(pkg, quietly = TRUE)) {
+    stop("package '", pkg, "' is not installed: install.packages(\"", pkg, "\")", call. = FALSE)
+  }
+}
+if (packageVersion("teems") < "1.0.1") {
+  stop("teems >= 1.0.1 is required, found ", packageVersion("teems"),
+    ": install.packages(\"teems\")",
+    call. = FALSE
+  )
+}
+library(teems)
+library(data.table)
 
 # ------------------------------------------------------------------------------
 # configuration
@@ -23,17 +33,23 @@ ALLTIME <- c(
 )
 SFID <- "sq"
 
-# GTAP 11c (reference year 2017)
-DAT <- Sys.getenv("GTAP11c_dat")
-PAR <- Sys.getenv("GTAP11c_par")
-SET <- Sys.getenv("GTAP11c_set")
+# GTAP 11c (reference year 2017): paths to the data, parameter and set files
+GTAP_ENV <- c(dat = "GTAP11c_dat", par = "GTAP11c_par", set = "GTAP11c_set")
+DAT <- Sys.getenv(GTAP_ENV[["dat"]])
+PAR <- Sys.getenv(GTAP_ENV[["par"]])
+SET <- Sys.getenv(GTAP_ENV[["set"]])
 
 # resources: concurrent jobs, and MPI tasks x OpenMP threads per intertemporal
 # job (static jobs run LU on MACROMIP_TASKS * MACROMIP_THREADS threads); on a
-# 32-core box 8 jobs x (2 x 2) gave ~30% more throughput than 4 x (4 x 2)
-WORKERS <- as.integer(Sys.getenv("MACROMIP_WORKERS", "8"))
+# 32-core box 8 jobs x (2 x 2) gave ~30% more throughput than 4 x (4 x 2).
+# The default number of jobs is what the cores allow, up to 8; an intertemporal
+# job at 27 sectors also needs about 8 GB of memory
 N_TASKS <- as.integer(Sys.getenv("MACROMIP_TASKS", "2"))
 N_THREADS <- as.integer(Sys.getenv("MACROMIP_THREADS", "2"))
+WORKERS <- as.integer(Sys.getenv(
+  "MACROMIP_WORKERS",
+  max(1L, min(8L, parallel::detectCores() %/% (N_TASKS * N_THREADS), na.rm = TRUE))
+))
 
 # rerun jobs whose results already exist
 OVERWRITE <- Sys.getenv("MACROMIP_OVERWRITE", "0") == "1"
@@ -81,8 +97,9 @@ MANUF <- c(
 # models
 # ------------------------------------------------------------------------------
 
-# format: database format the model reads; runs: result directory name and
-# ems_model() coefficient assignments for each variant
+# all three models ship with teems. format: database format the model reads;
+# runs: result directory name and ems_model() coefficient assignments for each
+# variant
 MODELS <- list(
   GTAPv6 = list(
     format = "GTAPv6",
@@ -93,21 +110,6 @@ MODELS <- list(
     format = "GTAPv7",
     intertemporal = FALSE,
     runs = list(GTAPv7 = list())
-  ),
-  # vendored from teems-models 9880dac (dropped from teems 1.0.0). Not run this
-  # round: its investment block is unstable over long horizons, a one-year shock
-  # drifts away from baseline (about x2 every 5 years after 2030, also on 5-year
-  # steps and, more slowly, in the earlier 2017-2050 runs)
-  `GTAP-INT` = list(
-    active = FALSE,
-    format = "GTAPv6",
-    intertemporal = TRUE,
-    files = c(
-      model_file = "./models/GTAP-INT/GTAP-INT.tab",
-      closure_file = "./models/GTAP-INT/GTAP-INT.cls"
-    ),
-    steps = c(2L, 4L, 8L),
-    runs = list(`GTAP-INT` = list())
   ),
   # GTAP-RE version 2 (GTAPv7.1 core) shipped with teems
   `GTAP-RE` = list(
@@ -188,12 +190,16 @@ SCENARIOS <- list(
 )
 
 # sensitivity: primary runs of pairs 1 and 2 with livestock treated as
-# non-agriculture, as in the earlier GTAP-INT/v6/v7 runs
+# non-agriculture, as in the earlier runs
 LIVESTOCK_NONAG <- c("1-p", "1-t", "2-p", "2-t")
 
 scenario_models <- function(scenario) {
-  models <- if (endsWith(scenario, "-p")) c("GTAP-INT", "GTAP-RE") else names(MODELS)
-  Filter(\(m) MODELS[[m]]$active %||% TRUE, models)
+  # a persistent shock needs an intertemporal model
+  if (endsWith(scenario, "-p")) {
+    names(Filter(\(m) m$intertemporal, MODELS))
+  } else {
+    names(MODELS)
+  }
 }
 
 run_hash <- function(f, primary) {
@@ -269,9 +275,6 @@ macromip_jobs <- function(model, scenario) {
   sc <- SCENARIOS[[scenario]]
   m <- MODELS[[model]]
   stopifnot(!is.null(sc), !is.null(m))
-  if (!isTRUE(m$active %||% TRUE)) {
-    stop(model, " is not run this round (see MODELS in R/common.R)")
-  }
   stopifnot(model %in% scenario_models(scenario))
 
   primary <- sc$forcings[1]
@@ -359,13 +362,11 @@ macromip_model <- function(model, run) {
 
   if (is.null(.cache[[key]])) {
     m <- MODELS[[model]]
-    files <- m$files
 
-    if (is.null(files)) {
-      dir <- file.path(tempdir(), "models")
-      dir.create(dir, showWarnings = FALSE)
-      files <- ems_example(model, dir)
-    }
+    # the model and closure files shipped with teems
+    dir <- file.path(tempdir(), "models")
+    dir.create(dir, showWarnings = FALSE)
+    files <- ems_example(model, dir)
 
     .cache[[key]] <- do.call(ems_model, c(
       list(
@@ -401,7 +402,7 @@ solve_job <- function(job, cmf_path, n_subintervals) {
       n_tasks = N_TASKS,
       n_threads = N_THREADS,
       solution_method = "Gragg",
-      steps = m$steps %||% c(2L, 4L, 6L),
+      steps = c(2L, 4L, 6L),
       n_subintervals = n_subintervals
     )
   } else {
@@ -501,8 +502,46 @@ run_job <- function(job) {
   c(status, res, minutes = round(as.numeric(difftime(Sys.time(), t0, units = "mins")), 1))
 }
 
+# everything a solve needs beyond the R packages: stop with all that is
+# missing, before any data is loaded
+check_setup <- function() {
+  problems <- character()
+
+  paths <- Sys.getenv(GTAP_ENV)
+  for (v in names(paths)) {
+    if (!nzchar(paths[[v]])) {
+      problems <- c(problems, paste0("environment variable ", v, " is not set"))
+    } else if (!file.exists(paths[[v]])) {
+      problems <- c(problems, paste0(v, " points to a missing file: ", paths[[v]]))
+    }
+  }
+
+  image <- paste0("teems:", ems_option_get("docker_tag"))
+  if (!nzchar(Sys.which("docker"))) {
+    problems <- c(problems, "docker is not on the PATH")
+  } else if (system2("docker", c("image", "inspect", image), stdout = FALSE, stderr = FALSE) != 0) {
+    problems <- c(problems, paste0(
+      "Docker image ", image, " not found (or the Docker daemon is not reachable)"
+    ))
+  }
+
+  if (.Platform$OS.type != "unix") {
+    problems <- c(problems, "jobs are forked, which needs Linux or macOS (on Windows use WSL)")
+  }
+
+  if (length(problems)) {
+    stop("setup is incomplete, see \"Setup\" in README.md:\n",
+      paste0("  - ", problems, collapse = "\n"),
+      call. = FALSE
+    )
+  }
+  invisible(TRUE)
+}
+
 # run jobs WORKERS at a time; each job is a forked process with its own solve
 run_jobs <- function(jobs) {
+  check_setup()
+
   # load data and models before forking so the jobs share them
   for (job in jobs) {
     macromip_data(job$model, job$map)
