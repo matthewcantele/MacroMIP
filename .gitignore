@@ -175,3 +175,5 @@ second_results
 archive
 *.pdf
 .RData
+third_runs
+third_results
